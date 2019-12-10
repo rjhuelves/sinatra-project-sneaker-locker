@@ -1,0 +1,14 @@
+<h1> Welcome to SneakerLocker! </h1>
+<p> Please sign up or sign in below </p>
+
+<nav>
+    <% if logged_in? %>
+        <p> Hello, <%= @current_user.username %> </p>
+        <a href ='/sneakers/new'> Enter New Sneaker </a>
+        <a href ='/logout'> Log out </a> <br>
+    <% else %>
+        <a href='/signup'> Sign up </a> 
+        <br>
+        <a href='/login'> Sign in </a>
+    <% end %>
+</nav>
