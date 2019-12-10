@@ -1,0 +1,18 @@
+<% if logged_in? %>
+    <p> Go to you <a href='/sneakers'> SneakerLocker </a> <p>
+<% else %>
+    <h2> Sign up for SneakerLocker </h2>
+    <form action = '/signup' method='POST'>
+        <label for='username'>Username: </label>
+        <input type='text' id='username' name='username' required> <br>
+        <label for='email'>Email: </label>
+        <input type='text' id='email' name='email' required> <br>
+        <label for='password'>Password: </label>
+        <input type='password' id='password' name='password' required> <br>
+        <input type='submit' id='submit' value='Sign up'>
+    </form>
+    <br>
+    <form action ='login' method="GET">
+        <input type='submit' id='submit' value='Log in'>
+    </form>
+<% end %>
