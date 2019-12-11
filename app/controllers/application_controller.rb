@@ -12,6 +12,7 @@ class ApplicationController < Sinatra::Base
   get '/' do
     erb :landing
   end
+  #directs to landing page at initial launch 
 
   helpers do 
     def logged_in?

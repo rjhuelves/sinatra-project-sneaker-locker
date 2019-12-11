@@ -12,6 +12,7 @@ class UsersController < ApplicationController
             redirect to '/sneakers'
         end 
     end 
+    #returns the sign up form, if they're not logged in. 
 
     post '/signup' do 
         if params[:username] == "" || params[:email] == "" || params[:password] == ""
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
             redirect to '/sneakers'
         end 
     end 
+    #returns user to sign up page if they leave the fields empty. if user fills it out correctly it saves the user to db and redirect to their index page. 
 
     get '/login' do 
         if !logged_in?
@@ -32,6 +34,7 @@ class UsersController < ApplicationController
             redirect to '/sneakers/:user_id'
         end 
     end 
+    #returns user login page. 
 
     post '/login' do 
         user = User.find_by(username: params[:username])
@@ -42,6 +45,7 @@ class UsersController < ApplicationController
             redirect to '/signup'
         end 
     end 
+    #allows user to sign in after authentication. 
 
     get '/logout' do 
         if logged_in?
@@ -51,5 +55,6 @@ class UsersController < ApplicationController
             redirect to '/'
         end 
     end 
+    #logs user out and clears the current session.
     
 end #end of UsersController 
