@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
     has_many :sneakers
-    
+
+    has_secure_password
     validates :username, uniqueness: {message: "Username is taken"}
 
     def slug

@@ -8,3 +8,4 @@ use Rack::MethodOverride
 use SneakersController 
 use UsersController 
 run ApplicationController
+
