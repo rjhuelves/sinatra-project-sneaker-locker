@@ -2,10 +2,12 @@
 
 <% @user_sneakers.each do |sneaker| %>
     <div>
-        <%=@sneaker.brand%> <%=@sneaker.model%><br>
-        Colorway: <%=@sneaker.colorway%><br>
-        Cost: $<%=@sneaker.cost%><br>
+        <%=sneaker.brand%> <%=sneaker.model%><br>
+        Colorway: <%=sneaker.colorway%><br>
+        Cost: $<%=sneaker.cost%><br>
     </div>
 <%end%>
+<br>
+<br>
 <a href='/sneakers/new'>Enter new sneaker</a><br>
 <a href='/logout'> Log out</a>
