@@ -1,0 +1,11 @@
+<h2> <%=@user.username%>'s SneakerLocker</h2>
+
+<% @user_sneakers.each do |sneaker| %>
+    <div>
+        <%=@sneaker.brand%> <%=@sneaker.model%><br>
+        Colorway: <%=@sneaker.colorway%><br>
+        Cost: $<%=@sneaker.cost%><br>
+    </div>
+<%end%>
+<a href='/sneakers/new'>Enter new sneaker</a><br>
+<a href='/logout'> Log out</a>
