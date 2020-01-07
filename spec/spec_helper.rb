@@ -1,4 +1,4 @@
-ENV["SINATRA_ENV"] = "test"
+ENV["SINATRA_ENV"] = "development"
 
 require_relative '../config/environment'
 require 'rack/test'
@@ -9,6 +9,7 @@ if ActiveRecord::Migrator.needs_migration?
   raise 'Migrations are pending. Run `rake db:migrate SINATRA_ENV=test` to resolve the issue.'
 end
 
+ActiveRecord::Base.connection.execute("BEGIN TRANSACTION; END;") 
 ActiveRecord::Base.logger = nil
 
 RSpec.configure do |config|
