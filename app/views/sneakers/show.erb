@@ -2,9 +2,13 @@
 <%=@sneaker.brand%> <%=@sneaker.model%>: <%=@sneaker.colorway%><br>
 $<%=@sneaker.cost%> 
 <br>
+<% if current_user.id == @sneaker.user_id %>
 <form action='/sneakers/<%=@sneaker.id%>/edit' method='GET'>
     <input type='submit' id='submit' value='Edit Sneaker'>
+<%# if user is sneaker owner then show edit button %>
 </form>
+<%end%>
+
 <br>
 <br>
 <a href='/sneakers'> View my SneakerLocker </a>

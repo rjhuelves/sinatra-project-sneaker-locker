@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
     has_secure_password
     validates :username, uniqueness: {message: "Username is taken"}
+    #validate for presence get rid of params 
 
     def slug
         username.downcase.gsub(" ", "-")

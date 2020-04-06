@@ -21,6 +21,7 @@ class UsersController < ApplicationController
             @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
             # binding.pry
             @user.save 
+            #if / then for error 
             session[:user_id] = @user.id 
             redirect to '/sneakers'
         end 
